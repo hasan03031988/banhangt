@@ -49,7 +49,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BanHangTDbContext.cs" />
+    <Compile Include="Infrastructure\DbFactory.cs" />
+    <Compile Include="Infrastructure\Disposable.cs" />
+    <Compile Include="Infrastructure\IDbFactory.cs" />
+    <Compile Include="Infrastructure\IRepository.cs" />
+    <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\RepositoryBase.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Migrations\201901091448599_initialDB.cs" />
+    <Compile Include="Migrations\201901091448599_initialDB.Designer.cs">
+      <DependentUpon>201901091448599_initialDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\ProductCategoryRepository.cs" />
+    <Compile Include="Repository\ProductRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -60,6 +75,15 @@
       <Project>{d28537ba-b024-4dda-b8ae-4e7dff8876d0}</Project>
       <Name>BanHangT.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BanHangT.Model\BanHangT.Model.csproj">
+      <Project>{97b2dce3-aaf0-4515-85f8-212dd538a669}</Project>
+      <Name>BanHangT.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201901091448599_initialDB.resx">
+      <DependentUpon>201901091448599_initialDB.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
